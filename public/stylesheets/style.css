@@ -4,6 +4,8 @@ header {
 
 .navbar .navbar-brand {
   color: #4592af;
+  font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
 }
 
 .navbar .navbar-brand:hover {
@@ -14,10 +16,8 @@ header {
   position: relative;
   z-index: -1;
   margin: -5px;
-  height: 360px;
-  background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
-  background-size: cover;
-  filter: blur(3px);
+  height: 450px;
+  filter: blur(2px);
 }
 
 .search-bar .search-bar-outer {
