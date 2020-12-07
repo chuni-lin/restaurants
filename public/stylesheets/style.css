@@ -1,3 +1,7 @@
+* {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
 header {
   overflow: hidden;
 }
@@ -76,6 +80,13 @@ header {
   text-align: center;
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.restaurant-description {
+  border-left: 1px solid #5bc0de;
+  border-left-width: .25rem;
+  padding-left: 1rem;
+  border-radius: .25rem;
 }
 
 @media screen and (max-width: 992px) {
