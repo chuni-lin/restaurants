@@ -20,8 +20,13 @@ header {
   position: relative;
   z-index: -1;
   margin: -5px;
-  height: 450px;
+  height: 400px;
   filter: blur(2px);
+}
+
+.banner img {
+  filter: brightness(50%);
+  background-position: center;
 }
 
 .search-bar .search-bar-outer {
