@@ -13,7 +13,7 @@ The collection of cozy restaurants.
   * Phone
   * Description
   * Photos
-* Search restaurants with keyword.
+* Search restaurants by keyword.
 
 ## Ecosystem
 - [Node.js](https://nodejs.org/en/)
