@@ -20,7 +20,7 @@ header {
   position: relative;
   z-index: -1;
   margin: -5px;
-  height: 400px;
+  height: 450px;
   filter: blur(2px);
 }
 
@@ -92,6 +92,34 @@ header {
   border-left-width: .25rem;
   padding-left: 1rem;
   border-radius: .25rem;
+}
+
+.page-footer {
+  margin: 0 6rem 0 6rem;
+  background-color: #433a3a;
+}
+
+.copyright {
+  border-top: 1px solid #DDDDDD;
+  font-size: 0.8rem;
+}
+
+.copyright a, .foot-info a {
+  color: #aaa;
+}
+
+.copyright a:hover {
+  text-decoration: none;
+  color: #666;
+}
+
+.foot-info a:hover {
+  text-decoration: none;
+  color: #666;
+}
+
+.copyright-title {
+  font-family: 'Lobster', cursive;
 }
 
 @media screen and (max-width: 992px) {
