@@ -26,7 +26,7 @@ The collection of cozy restaurants.
 ```
 git clone https://github.com/chuni-lin/restaurants.git
 ```
-2. Enter the4 folder and install npm packages.
+2. Enter the folder and install npm packages.
 ```
 npm install
 ```
