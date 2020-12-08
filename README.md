@@ -23,10 +23,18 @@ The collcection of cozy restaurants.
 
 ## Documentation
 1. Clone this repository to your folder.
-`git clone https://github.com/chuni-lin/restaurants.git`
+```
+git clone https://github.com/chuni-lin/restaurants.git
+```
 2. Enter the4 folder and install npm packages.
-`npm install`
+```
+npm install
+```
 3. Install nodemon if you need.
-`npm i nodemon`
+```
+npm i nodemon
+```
 4. Run on your localhost.
-`npm run dev`
+```
+npm run dev
+```
