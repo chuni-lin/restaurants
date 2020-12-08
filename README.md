@@ -1,40 +1,52 @@
 # Restaurants
-The collection of cozy restaurants. 
+
+The collection of cozy restaurants.
 
 ## Introduction
-* Simple information of restaurants will be shown in the toppage:
-  * Photos
-  * Name
-  * Category
-  * Rating
-* Click to see more detailed information:
-  * Category
-  * Adress
-  * Phone
-  * Description
-  * Photos
-* Search restaurants by keyword.
+
+- Simple information of restaurants will be shown in the toppage:
+  - Photos
+  - Name
+  - Category
+  - Rating
+- Click to see more detailed information:
+  - Category
+  - Adress
+  - Phone
+  - Description
+  - Photos
+- Search restaurants by keyword.
+  ![](https://i.imgur.com/leaIRgs.jpg)
 
 ## Ecosystem
+
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://www.npmjs.com/package/express)
 - [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
 - [nodemon](https://www.npmjs.com/package/nodemon)
 
 ## Documentation
+
 1. Clone this repository to your folder.
+
 ```
 git clone https://github.com/chuni-lin/restaurants.git
 ```
+
 2. Enter the folder and install npm packages.
+
 ```
 npm install
 ```
+
 3. Install nodemon if you need.
+
 ```
 npm i nodemon
 ```
+
 4. Run on your localhost.
+
 ```
 npm run dev
 ```
