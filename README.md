@@ -1,20 +1,11 @@
 # Restaurants
 
-The collection of cozy restaurants.
+A collection of cozy restaurants. Web application based on `node.js`.
 
 ## Introduction
 
-- Simple information of restaurants will be shown in the toppage:
-  - Photos
-  - Name
-  - Category
-  - Rating
-- Click to see more detailed information:
-  - Category
-  - Adress
-  - Phone
-  - Description
-  - Photos
+- Simple information of restaurants will be shown in the top-page.
+- Click each restaurant to see more detailed information.
 - Search restaurants by keyword.
   ![](https://i.imgur.com/leaIRgs.jpg)
 
