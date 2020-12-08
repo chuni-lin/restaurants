@@ -1,5 +1,5 @@
 # Restaurants
-The collcection of cozy restaurants. 
+The collection of cozy restaurants. 
 
 ## Introduction
 * Simple information of restaurants will be shown in the toppage:
