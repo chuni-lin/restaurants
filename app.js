@@ -86,12 +86,17 @@ app.post('/restaurants/:id/delete', (req, res) => {
     .catch(error => console.log(error))
 })
 
+
+// 搜尋餐廳
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword.trim()
-  const restaurants = restaurantList.results.filter(item =>
-    item.name.toLowerCase().includes(keyword.toLowerCase()) ||
-    item.category.toLowerCase().includes(keyword.toLowerCase())
-  )
-  res.render('index', { restaurants, keyword })
+  const restaurants = restaurantList.filter(item => {
+    return item.category.includes(keyword) ||
+      item.name.toLowerCase().includes(keyword.toLowerCase())
+  })
+  if (restaurants.length === 0) {
+    res.render('notfound')
+  } else {
+    res.render('index', { restaurants, keyword })
+  }
 })
-
