@@ -33,17 +33,29 @@
       </p>
       <div class="mb-5 text-center">
         <a href="/restaurants/{{restaurant._id}}/edit">
-          <button type="button" class="btn btn-info ml-3">編輯</button></a>
-        {{!-- <a href="/">
-          <button type="button" class="btn btn-success ml-3">返回首頁</button>
-        </a> --}}
-        <form action="/restaurants/{{restaurant._id}}?_method=DELETE" method="post" style="display: inline;">
-          <button type="submit" onclick="myFunction()" class="btn btn-danger ml-3">刪除</button>
-          <script>
-            function myFunction() {
-              alert("是否確定要刪除整筆資料")
-            }
-          </script>
+          <button type="button" class="btn btn-info ml-3">編輯</button>
+        </a>
+        <button type="button" class="btn btn-danger ml-3" data-toggle="modal"
+          data-target="#deleteModal-{{restaurant._id}}">
+          刪除
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Delete modal --}}
+<div class="modal fade" id="deleteModal-{{restaurant._id}}" tabindex="-1" role="dialog"
+  aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <big class="modal-body">
+        確定要刪除 <strong>{{restaurant.name}}</strong> 嗎？
+      </big>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <form action="/restaurants/{{restaurant._id}}/delete" method="POST">
+          <button type="submit" class="btn btn-danger">確認刪除</button>
         </form>
       </div>
     </div>
