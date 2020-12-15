@@ -1,0 +1,61 @@
+<div class="container mt-n5 mt-md-5 mb-md-5">
+  <div class="row justify-content-center">
+    <div class="create-form pb-3 pt-5">
+      <form action="/restaurants" method="POST">
+        <div class="form-row justify-content-center">
+          <div class="form-group col-10 col-md-6">
+            <label for="name">Restaurant Name｜餐廳名稱</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="餐廳名稱" required>
+          </div>
+          <div class="form-group col-10 col-md-4 ml-2">
+            <label for="category">Category｜餐廳類型</label>
+            <select id="category" class="form-control" name="category" required>
+              <option>選擇餐廳類型</option>
+              <option>美式餐廳</option>
+              <option>日本料理</option>
+              <option>義式餐廳</option>
+              <option>中式餐廳</option>
+              <option>泰式料理</option>
+              <option>中東料理</option>
+              <option>異國風味</option>
+              <option>吃到飽</option>
+              <option>早午餐</option>
+              <option>咖啡店</option>
+              <option>酒吧</option>
+            </select>
+          </div>
+          <div class="form-group col-10">
+            <label for="address">Address｜餐廳地址</label>
+            <input type="text" class="form-control" id="address" name="location" placeholder="餐廳地址" required>
+          </div>
+          <div class="form-group col-10 col-md-6">
+            <label for="phone">Phone｜餐廳電話</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" required>
+          </div>
+          <div class="form-group col-10 col-md-4">
+            <label for="rating">Rating｜餐廳評價</label>
+            <input type="text" class="form-control" id="rating" name="rating" placeholder="4.0">
+          </div>
+          <div class="form-group col-10">
+            <label for="image">Image｜餐廳圖片</label>
+            <input type="text" class="form-control" id="image" name="image" placeholder="http://">
+          </div>
+          <div class="form-group col-10">
+            <label for="google_map">Google Map｜餐廳位置</label>
+            <input type="text" class="form-control" id="google_map" name="google_map" placeholder="Google map URL">
+          </div>
+          <div class="form-group col-10">
+            <label for="description">Description｜餐廳描述</label>
+            <textarea type="text" class="form-control form-description" id="description" name="description"></textarea>
+          </div>
+          <div class="form-group col-md-10 text-center" style="margin-top: 10px;">
+            <button type="submit" class="btn btn-success">送出</button>
+            {{!-- <a href="/">
+              <button type="button" class="btn btn-warning ml-3">返回</button>
+            </a> --}}
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

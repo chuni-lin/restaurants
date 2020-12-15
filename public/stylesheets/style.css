@@ -122,6 +122,16 @@ header {
   font-family: 'Lobster', cursive;
 }
 
+.create-form {
+  background-color: rgb(240, 240, 240);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
 @media screen and (max-width: 992px) {
   .card img {
     height: 115px;
