@@ -28,9 +28,24 @@
         </span>
         {{restaurant.phone}}
       </p>
-      <p class="mb-5 restaurant-description">
+      <p class="mb-3 restaurant-description">
         {{restaurant.description}}
       </p>
+      <div class="mb-5 text-center">
+        <a href="/restaurants/{{restaurant._id}}/edit">
+          <button type="button" class="btn btn-info ml-3">編輯</button></a>
+        {{!-- <a href="/">
+          <button type="button" class="btn btn-success ml-3">返回首頁</button>
+        </a> --}}
+        <form action="/restaurants/{{restaurant._id}}?_method=DELETE" method="post" style="display: inline;">
+          <button type="submit" onclick="myFunction()" class="btn btn-danger ml-3">刪除</button>
+          <script>
+            function myFunction() {
+              alert("是否確定要刪除整筆資料")
+            }
+          </script>
+        </form>
+      </div>
     </div>
   </div>
 </div>

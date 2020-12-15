@@ -1,5 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+const hbshelpers = require('handlebars-helpers')
+const comparison = hbshelpers.comparison()
 const restaurantList = require('./restaurant.json').results
 const mongoose = require('mongoose')
 const db = mongoose.connection
@@ -8,7 +10,7 @@ const app = express()
 const port = 3000
 const Restaurant = require('./models/restaurant')
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.engine('handlebars', exphbs({ helpers: comparison, defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use((bodyParser.urlencoded({ extended: true })))
 app.use(express.static('public'))
@@ -46,6 +48,33 @@ app.get('/restaurants/:id', (req, res) => {
     .lean()
     .then(restaurant => res.render('show', { restaurant }))
     .catch(error => console.error(error))
+})
+
+
+// 編輯餐廳
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then(restaurant => res.render('edit', { restaurant }))
+    .catch(error => console.log(error))
+})
+app.post('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .then(restaurant => {
+      restaurant.name = req.body.name
+      restaurant.category = req.body.category
+      restaurant.image = req.body.image
+      restaurant.location = req.body.location
+      restaurant.phone = req.body.phone
+      restaurant.rating = req.body.rating
+      restaurant.google_map = req.body.google_map
+      restaurant.description = req.body.description
+      return restaurant.save()
+    })
+    .then(() => res.redirect(`/restaurants/${id}`))
+    .catch(error => console.log(error))
 })
 
 

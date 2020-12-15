@@ -1,0 +1,68 @@
+<div class="container mt-n5 mt-md-5 mb-md-5">
+  <div class="row justify-content-center">
+    <div class="create-form pb-3 pt-5">
+      <form action="/restaurants/{{restaurant._id}}/edit" method="POST">
+        <div class="form-row justify-content-center">
+          <div class="form-group col-10 col-md-6">
+            <label for="name">Restaurant Name｜餐廳名稱</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="餐廳名稱" value="{{restaurant.name}}"
+              required>
+          </div>
+          <div class="form-group col-10 col-md-4 ml-2">
+            <label for="category">Category｜餐廳類型</label>
+            <select id="category" class="form-control" name="category" value="{{restaurant.category}}" required>
+              <option>選擇餐廳類型</option>
+              <option value="美式餐廳" {{#is restaurant.category "美式餐廳" }} selected {{/is}}>美式餐廳</option>
+              <option value="日本料理" {{#is restaurant.category "日本料理" }} selected {{/is}}>日本料理</option>
+              <option value="義式餐廳" {{#is restaurant.category "義式餐廳" }} selected {{/is}}>義式餐廳</option>
+              <option value="中式餐廳" {{#is restaurant.category "中式餐廳" }} selected {{/is}}>中式餐廳</option>
+              <option value="泰式料理" {{#is restaurant.category "泰式料理" }} selected {{/is}}>泰式料理</option>
+              <option value="中東料理" {{#is restaurant.category "中東料理" }} selected {{/is}}>中東料理</option>
+              <option value="吃到飽" {{#is restaurant.category "吃到飽" }} selected {{/is}}>吃到飽</option>
+              <option value="早午餐" {{#is restaurant.category "早午餐" }} selected {{/is}}>早午餐</option>
+              <option value="咖啡店" {{#is restaurant.category "咖啡店" }} selected {{/is}}>咖啡店</option>
+              <option value="酒吧" {{#is restaurant.category "酒吧" }} selected {{/is}}>酒吧</option>
+              <option value="火鍋" {{#is restaurant.category "火鍋" }} selected {{/is}}>火鍋</option>
+            </select>
+          </div>
+          <div class="form-group col-10">
+            <label for="address">Address｜餐廳地址</label>
+            <input type="text" class="form-control" id="address" name="location" placeholder="餐廳地址"
+              value="{{restaurant.location}}" required>
+          </div>
+          <div class="form-group col-10 col-md-6">
+            <label for="phone">Phone｜餐廳電話</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number"
+              value="{{restaurant.phone}}" required>
+          </div>
+          <div class="form-group col-10 col-md-4">
+            <label for="rating">Rating｜餐廳評價</label>
+            <input type="text" class="form-control" id="rating" name="rating" placeholder="4.0"
+              value="{{restaurant.rating}}">
+          </div>
+          <div class="form-group col-10">
+            <label for="image">Image｜餐廳圖片</label>
+            <input type="text" class="form-control" id="image" name="image" placeholder="http://"
+              value="{{restaurant.image}}">
+          </div>
+          <div class="form-group col-10">
+            <label for="google_map">Google Map｜餐廳位置</label>
+            <input type="text" class="form-control" id="google_map" name="google_map" placeholder="Google map URL"
+              value="{{restaurant.google_map}}">
+          </div>
+          <div class="form-group col-10">
+            <label for="description">Description｜餐廳描述</label>
+            <input type="text" class="form-control form-description" id="description" name="description"
+              value="{{restaurant.description}}">
+          </div>
+          <div class="form-group col-md-10 text-center" style="margin-top: 10px;">
+            <button type="submit" class="btn btn-info">更新</button>
+            {{!-- <a href="/restaurants/{{restaurant._id}}">
+              <button type="button" class="btn btn-success ml-3">資訊</button>
+            </a> --}}
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
