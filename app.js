@@ -1,12 +1,23 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const restaurantList = require('./restaurant.json')
+const mongoose = require('mongoose')
+const db = mongoose.connection
+const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
+app.listen(port, () => {
+  console.log(`Express is running on http://localhost:${port}`)
+})
+
+// 連線資料庫
+mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
+db.on('error', () => console.log('MongoDB error!'))
+db.once('open', () => console.log('MongoDB connected!'))
 
 app.get('/', (req, res) => {
   res.render('index', { restaurants: restaurantList.results })
@@ -24,6 +35,3 @@ app.get('/search', (req, res) => {
   res.render('index', { restaurants, keyword })
 })
 
-app.listen(port, () => {
-  console.log(`Express is running on http://localhost:${port}`)
-})
