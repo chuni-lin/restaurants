@@ -4,10 +4,13 @@ A collection of cozy restaurants. Web application based on `node.js`.
 
 ## Introduction
 
-- Simple information of restaurants will be shown in the top-page.
-- Click each restaurant to see more detailed information.
-- Search restaurants by keyword.
-  ![](https://i.imgur.com/leaIRgs.jpg)
+- Restaurants will be shown in the top-page.
+- Click each restaurant to **read** more detailed information.
+- **Search** restaurants by keyword.
+- **Add** your favorite restaurant.
+- **Remove** restaurant.
+- **Edit** or update restaurant information.
+  ![](https://i.imgur.com/FUUVprq.jpg)
 
 ## Ecosystem
 
@@ -15,6 +18,8 @@ A collection of cozy restaurants. Web application based on `node.js`.
 - [Express](https://www.npmjs.com/package/express)
 - [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
 - [nodemon](https://www.npmjs.com/package/nodemon)
+- [Mongoose](https://www.npmjs.com/package/mongoose)
+- [MongoDB](https://www.mongodb.com/try/download/community)
 
 ## Documentation
 
@@ -30,10 +35,10 @@ git clone https://github.com/chuni-lin/restaurants.git
 npm install
 ```
 
-3. Install nodemon if you need.
+3. Run seed.
 
 ```
-npm i nodemon
+npm run seed
 ```
 
 4. Run on your localhost.
