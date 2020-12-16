@@ -92,11 +92,8 @@ app.get('/search', (req, res) => {
         return item.category.includes(keyword) ||
           item.name.toLowerCase().includes(keyword.toLowerCase())
       })
-      if (restaurants.length === 0) {
-        res.render('noResult')
-      } else {
-        res.render('index', { restaurants, keyword })
-      }
+      return (!restaurants.length) ? res.render('noResult', { keyword }) : res.render('index', { restaurants, keyword })
     })
     .catch(error => console.log(error))
 })
+
