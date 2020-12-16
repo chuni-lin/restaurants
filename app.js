@@ -90,13 +90,18 @@ app.post('/restaurants/:id/delete', (req, res) => {
 // 搜尋餐廳
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword.trim()
-  const restaurants = restaurantList.filter(item => {
-    return item.category.includes(keyword) ||
-      item.name.toLowerCase().includes(keyword.toLowerCase())
-  })
-  if (restaurants.length === 0) {
-    res.render('noResult')
-  } else {
-    res.render('index', { restaurants, keyword })
-  }
+  Restaurant.find()
+    .lean()
+    .then(list => {
+      const restaurants = list.filter(item => {
+        return item.category.includes(keyword) ||
+          item.name.toLowerCase().includes(keyword.toLowerCase())
+      })
+      if (restaurants.length === 0) {
+        res.render('noResult')
+      } else {
+        res.render('index', { restaurants, keyword })
+      }
+    })
+    .catch(error => console.log(error))
 })
