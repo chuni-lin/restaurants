@@ -34,7 +34,9 @@ app.get('/', (req, res) => {
 // 新增餐廳
 app.get('/restaurants/create', (req, res) => res.render('create'))
 app.post('/restaurants', (req, res) => {
-  if (req.body.image.length === 0) { req.body.image = 'https://www.teknozeka.com/wp-content/uploads/2020/03/wp-header-logo-33.png' }
+  if (!req.body.image) {
+    req.body.image = 'https://via.placeholder.com/600x300.png?text=Restaurants'
+  }
   const restaurant = req.body
   return Restaurant.create(restaurant)
     .then(() => res.redirect('/'))
