@@ -2,7 +2,6 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const hbshelpers = require('handlebars-helpers')
 const comparison = hbshelpers.comparison()
-const restaurantList = require('./restaurant.json').results
 const mongoose = require('mongoose')
 const db = mongoose.connection
 const bodyParser = require('body-parser')
