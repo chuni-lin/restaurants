@@ -4,11 +4,12 @@
       <form action="/restaurants" method="POST">
         <div class="form-row justify-content-center">
           <div class="form-group col-10 col-md-6">
-            <label for="name">Restaurant Name｜餐廳名稱</label>
+            <label for="name">Restaurant Name｜餐廳名稱<span class="text-danger">*</span>
+            </label>
             <input type="text" class="form-control" id="name" name="name" placeholder="餐廳名稱" required>
           </div>
           <div class="form-group col-10 col-md-4 ml-2">
-            <label for="category">Category｜餐廳類型</label>
+            <label for="category">Category｜餐廳類型<span class="text-danger">*</span></label>
             <select id="category" class="form-control" name="category" required>
               <option>選擇餐廳類型</option>
               <option value="美式餐廳">美式餐廳</option>
@@ -25,11 +26,13 @@
             </select>
           </div>
           <div class="form-group col-10">
-            <label for="address">Address｜餐廳地址</label>
+            <label for="address">Address｜餐廳地址<span class="text-danger">*</span>
+            </label>
             <input type="text" class="form-control" id="address" name="location" placeholder="餐廳地址" required>
           </div>
           <div class="form-group col-10 col-md-6">
-            <label for="phone">Phone｜餐廳電話</label>
+            <label for="phone">Phone｜餐廳電話<span class="text-danger">*</span>
+            </label>
             <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" required>
           </div>
           <div class="form-group col-10 col-md-4">
@@ -41,8 +44,8 @@
             <input type="text" class="form-control" id="image" name="image" placeholder="http://">
           </div>
           <div class="form-group col-10">
-            <label for="google_map">Google Map｜餐廳位置</label>
-            <input type="text" class="form-control" id="google_map" name="google_map" placeholder="Google map URL">
+            <label for="google_map">Google Map</label>
+            <input type="text" class="form-control" id="google_map" name="google_map" placeholder="Google Maps URL">
           </div>
           <div class="form-group col-10">
             <label for="description">Description｜餐廳描述</label>
