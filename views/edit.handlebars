@@ -10,7 +10,7 @@
           </div>
           <div class="form-group col-10 col-md-4 ml-2">
             <label for="category">Category｜餐廳類型</label>
-            <select id="category" class="form-control" name="category" value="{{restaurant.category}}" required>
+            <select id="category" class="form-control" name="category" required>
               <option>選擇餐廳類型</option>
               <option value="美式餐廳" {{#is restaurant.category "美式餐廳" }} selected {{/is}}>美式餐廳</option>
               <option value="日本料理" {{#is restaurant.category "日本料理" }} selected {{/is}}>日本料理</option>

@@ -95,7 +95,7 @@ app.get('/search', (req, res) => {
       item.name.toLowerCase().includes(keyword.toLowerCase())
   })
   if (restaurants.length === 0) {
-    res.render('notfound')
+    res.render('noResult')
   } else {
     res.render('index', { restaurants, keyword })
   }
