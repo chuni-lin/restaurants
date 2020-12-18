@@ -8,11 +8,13 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 const Restaurant = require('./models/restaurant')
+const methodOverride = require('method-override')
 
 app.engine('handlebars', exphbs({ helpers: comparison, defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use((bodyParser.urlencoded({ extended: true })))
 app.use(express.static('public'))
+app.use(methodOverride('_method'))
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
 })
@@ -60,7 +62,7 @@ app.get('/restaurants/:id/edit', (req, res) => {
     .then(restaurant => res.render('edit', { restaurant }))
     .catch(error => console.log(error))
 })
-app.post('/restaurants/:id/edit', (req, res) => {
+app.put('/restaurants/:id', (req, res) => {
   const id = req.params.id
   const updated = req.body
   return Restaurant.findById(id)
@@ -73,7 +75,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
 })
 
 // 刪除餐廳
-app.post('/restaurants/:id/delete', (req, res) => {
+app.delete('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
     .then(restaurant => restaurant.remove())
