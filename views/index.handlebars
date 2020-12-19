@@ -18,8 +18,22 @@
 
 {{!-- restaurant list --}}
 <div class="container mt-5">
+  <div class="row col-12 justify-content-center mb-1">
+    <div class="dropdown">
+      <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        排列方式
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/sort/name/asc">A->Z</a>
+        <a class="dropdown-item" href="/sort/name/desc">Z->A</a>
+        <a class="dropdown-item" href="/sort/category/asc">餐廳類別</a>
+        <a class="dropdown-item" href="/sort/location/asc">地區</a>
+      </div>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-md-10 col-12 mx-auto">
+    <div class="col-12 col-md-10 mx-auto">
       <div class="card-columns">
         {{#each restaurants}}
         <a href="/restaurants/{{this._id}}" class="text-secondary">
