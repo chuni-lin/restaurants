@@ -18,20 +18,18 @@
 
 {{!-- restaurant list --}}
 <div class="container mt-5">
-  <div class="row col-12 justify-content-center mb-1">
-    <div class="dropdown">
-      <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        排列方式
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="/sort/name/asc">A->Z</a>
-        <a class="dropdown-item" href="/sort/name/desc">Z->A</a>
-        <a class="dropdown-item" href="/sort/category/asc">餐廳類別</a>
-        <a class="dropdown-item" href="/sort/location/asc">地區</a>
-      </div>
+  <form action="/restaurants" method="GET" class="row mb-3 d-flex justify-content-end justify-content-md-center">
+    <div class="col-4 col-md-3">
+      <select class="form-control" id="sort" name="sort" onchange="this.form.submit()">
+        <option value="">排序方式</option>
+        <option value="name_asc" {{#is sort "name_asc" }} selected {{/is}}>A->Z</option>
+        <option value="name_desc" {{#is sort "name_desc" }} selected {{/is}}>Z->A</option>
+        <option value="category" {{#is sort "category" }} selected {{/is}}>餐點類型</option>
+        <option value="location" {{#is sort "location" }} selected {{/is}}>地區</option>
+      </select>
+      <noscript><input type="submit"></noscript>
     </div>
-  </div>
+  </form>
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
       <div class="card-columns">
