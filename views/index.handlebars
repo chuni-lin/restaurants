@@ -18,6 +18,7 @@
 
 {{!-- restaurant list --}}
 <div class="container mt-5">
+  {{!-- 餐廳排序 --}}
   <form action="/restaurants" method="GET" class="row mb-3 d-flex justify-content-end justify-content-md-center">
     <div class="col-4 col-md-3">
       <select class="form-control" id="sort" name="sort" onchange="this.form.submit()">
@@ -27,9 +28,11 @@
         <option value="category" {{#is sort "category" }} selected {{/is}}>餐點類型</option>
         <option value="location" {{#is sort "location" }} selected {{/is}}>地區</option>
       </select>
-      <noscript><input type="submit"></noscript>
+      {{!-- 如果使用者關閉瀏覽器 JavaScript 功能才會跳出--}}
+      <noscript><input type="submit">此選項需要使用到 JavaScript，請開啟 JavaScript 以進一步使用。</noscript>
     </div>
   </form>
+
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
       <div class="card-columns">
