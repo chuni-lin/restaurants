@@ -9,8 +9,9 @@ A collection of cozy restaurants. Web application based on `node.js`.
 - **Search** restaurants by keyword.
 - **Add** your favorite restaurant.
 - **Remove** restaurant.
-- **Edit** or update restaurant information.
-  ![](https://i.imgur.com/FUUVprq.jpg)
+- **Edit** or update restaurant's information.
+- **Sort** restaurants by name, category, location or rating
+  ![](https://i.imgur.com/QCK53IZ.jpg)
 
 ## Ecosystem
 
