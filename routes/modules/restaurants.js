@@ -74,6 +74,9 @@ router.get('/', (req, res) => {
     case 'location':
       order = { location: 'asc' }
       break
+    case 'rating':
+      order = { rating: 'desc' }
+      break
   }
   Restaurant.find()
     .lean()
