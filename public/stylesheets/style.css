@@ -2,6 +2,16 @@
   font-family: 'Noto Sans TC', sans-serif;
 }
 
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 header {
   overflow: hidden;
 }
@@ -95,8 +105,6 @@ header {
 }
 
 .page-footer {
-  position: fixed;
-  bottom: 0px;
   margin: 0 6rem 0 6rem;
   background-color: #433a3a;
 }
@@ -143,11 +151,6 @@ header {
 @media screen and (max-width: 768px) {
   .restaurant-show-title {
     font-size: 2rem;
-  }
-  .page-footer {
-    position: static;
-    margin: 0 6rem 0 6rem;
-    background-color: #433a3a;
   }
 }
 
