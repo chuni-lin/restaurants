@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const exphbs = require('express-handlebars')
 const hbshelpers = require('handlebars-helpers')
 const comparison = hbshelpers.comparison()
@@ -12,10 +13,18 @@ require('./config/mongoose')
 
 app.engine('handlebars', exphbs({ helpers: comparison, defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+
+app.use(session({
+  secret: 'ThisIsMySecret',
+  resave: false,
+  saveUninitialized: true
+}))
 app.use((bodyParser.urlencoded({ extended: true })))
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(routes)
+
+
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
 })
