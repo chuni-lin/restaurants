@@ -9,10 +9,12 @@ const bcrypt = require('bcryptjs')
 const restaurantList = require('../../restaurant.json').results
 const SEED_USERS = [
   {
+    name: 'user1',
     email: 'user1@example.com',
     password: '12345678'
   },
   {
+    name: 'user2',
     email: 'user2@example.com',
     password: '12345678'
   }
