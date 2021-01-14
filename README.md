@@ -13,7 +13,7 @@ A collection of cozy restaurants. Web application based on `node.js`.
 - **Sort** restaurants by name, category, location or rating
 - Available to register with your Email.
 - Available to login via Facebook.
-  ![](https://i.imgur.com/fBMVs87.jpg)
+  ![](https://i.imgur.com/lonQgaq.jpg)
 
 ## Ecosystem
 
