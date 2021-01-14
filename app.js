@@ -5,9 +5,11 @@ const hbshelpers = require('handlebars-helpers')
 const comparison = hbshelpers.comparison()
 const bodyParser = require('body-parser')
 const app = express()
-const port = 3000
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 const routes = require('./routes')
 require('./config/mongoose')
@@ -18,7 +20,7 @@ app.engine('handlebars', exphbs({ helpers: comparison, defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 app.use(session({
-  secret: 'ThisIsMySecret',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
@@ -39,8 +41,8 @@ app.use((req, res, next) => {
 app.use(routes)
 
 
-app.listen(port, () => {
-  console.log(`Express is running on http://localhost:${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`Express is running on http://localhost:${process.env.PORT}`)
 })
 
 
