@@ -11,7 +11,9 @@ A collection of cozy restaurants. Web application based on `node.js`.
 - **Remove** restaurant.
 - **Edit** or update restaurant's information.
 - **Sort** restaurants by name, category, location or rating
-  ![](https://i.imgur.com/QCK53IZ.jpg)
+- Available to register with your Email.
+- Available to login via Facebook.
+  ![](https://i.imgur.com/fBMVs87.jpg)
 
 ## Ecosystem
 
