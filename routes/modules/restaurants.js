@@ -2,6 +2,32 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
+//載入資料庫
+router.get('/', (req, res) => {
+  const userId = req.user._id
+  Restaurant.find({ userId })
+    .lean()
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.error(error))
+})
+
+
+// 搜尋餐廳
+router.get('/search', (req, res) => {
+  const userId = req.user._id
+  const keyword = req.query.keyword.trim()
+  Restaurant.find({ userId })
+    .lean()
+    .then(list => {
+      const restaurants = list.filter(item => {
+        return item.category.includes(keyword) ||
+          item.name.toLowerCase().includes(keyword.toLowerCase())
+      })
+      return (!restaurants.length) ? res.render('noResult', { keyword }) : res.render('index', { restaurants, keyword })
+    })
+    .catch(error => console.log(error))
+})
+
 
 // 新增餐廳
 router.get('/create', (req, res) => res.render('create'))
@@ -12,7 +38,7 @@ router.post('/', (req, res) => {
   const restaurant = req.body
   restaurant.userId = req.user._id
   return Restaurant.create(restaurant)
-    .then(() => res.redirect('/'))
+    .then(() => res.redirect('/restaurants'))
     .catch(error => console.log(error))
 })
 
@@ -57,7 +83,7 @@ router.delete('/:id', (req, res) => {
   const _id = req.params.id
   return Restaurant.findOne({ _id, userId })
     .then(restaurant => restaurant.remove())
-    .then(() => res.redirect('/'))
+    .then(() => res.redirect('/restaurants'))
     .catch(error => console.log(error))
 })
 
