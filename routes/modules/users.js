@@ -10,7 +10,7 @@ router.get('/login', (req, res) => {
 })
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/restaurants',
-  failureRedirect: '/users/login',
+  failureRedirect: '/users/login#login-form',
   failureFlash: true
 }))
 
@@ -50,7 +50,7 @@ router.post('/register', (req, res) => {
           email,
           password: hash,
         }))
-        .then(() => res.redirect('/'))
+        .then(() => res.redirect('/restaurants'))
         .catch(err => console.log(err))
     })
 })
@@ -58,7 +58,7 @@ router.post('/register', (req, res) => {
 router.get('/logout', (req, res) => {
   req.logout()
   req.flash('success_msg', "You've been successfully logged out.")
-  res.redirect('/users/login')
+  res.redirect('/users/login#login-form')
 })
 
 module.exports = router

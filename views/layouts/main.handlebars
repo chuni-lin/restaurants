@@ -28,7 +28,7 @@
         {{#if isAuthenticated}}
         <div class="row justify-content-end align-items-center">
           <div>
-            <a href="/restaurants/create">
+            <a href="/restaurants/create#create-form">
               <button class="btn btn-warning mr-2" type="button"><i class="mr-2 fas fa-plus"></i>新增餐廳
               </button>
             </a>
@@ -39,7 +39,7 @@
           </div>
         </div>
         {{else}}
-        <a href="/users/login" class="btn btn-outline-info"><i class="mr-2 fas fa-sign-in-alt"></i>登入</a>
+        <a href="/users/login#login-form" class="btn btn-outline-info"><i class="mr-2 fas fa-sign-in-alt"></i>登入</a>
         {{/if}}
       </div>
     </nav>
@@ -86,7 +86,7 @@
               <a href="/restaurants">首頁</a>
             </li>
             <li>
-              <a href="/restaurants/create">新增餐廳</a>
+              <a href="/restaurants/create#create-form">新增餐廳</a>
             </li>
           </ul>
         </div>
